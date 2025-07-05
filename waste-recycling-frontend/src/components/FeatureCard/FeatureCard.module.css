@@ -1,0 +1,53 @@
+/* src/components/FeatureCard/FeatureCard.module.css */
+
+.cardLink {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit text color */
+    display: block; /* Allow card to take up grid space */
+    height: 100%; /* Make link fill the card height */
+}
+
+.card {
+    background-color: var(--color-surface-dark-rgba);
+    /* backdrop-filter: blur(5px); Optional */
+    border: 1px solid var(--color-border-dark);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem 1.8rem;
+    text-align: center;
+    height: 100%; /* Make card fill link height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center;
+    box-shadow: var(--box-shadow-sm);
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02); /* Lift and slightly scale up */
+    box-shadow: 0 8px 20px rgba(0, 230, 118, 0.2); /* Green glow shadow */
+    border-color: var(--color-primary-green); /* Highlight border */
+}
+
+.iconWrapper {
+    font-size: 3rem; /* Large icon */
+    margin-bottom: 1rem;
+    color: var(--color-accent-cyan); /* Use accent color for icons */
+    line-height: 1; /* Prevent extra space */
+}
+
+.title {
+    font-family: var(--font-primary);
+    color: var(--color-primary-green);
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.description {
+    font-family: var(--font-secondary);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}

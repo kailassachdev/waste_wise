@@ -1,0 +1,164 @@
+/* src/pages/DisposalGuidePage.module.css */
+
+
+.guideContainer {
+  padding: 1.5rem 2rem;
+  max-width: 900px;
+  margin: 1rem auto;
+  background-color: #041a0f;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.guideContainer h2 {
+  text-align: center;
+  color: #061909; /* Green heading */
+  margin-bottom: 0.5rem;
+}
+
+.guideContainer p {
+  text-align: center;
+  color: #85cb86;
+  margin-bottom: 2rem;
+}
+
+/* Search Bar Styles */
+.searchBar {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.searchInput {
+  width: 80%;
+  max-width: 500px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 25px; /* Pill shape */
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: #2c8c3e;
+  box-shadow: 0 0 0 2px rgba(44, 140, 62, 0.2);
+}
+
+/* Guide Content Styles */
+.guideContent {
+  margin-top: 1rem;
+}
+
+.categorySection {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #64d999;
+  border-radius: 8px;
+  background-color: #0a2005;
+}
+
+.categoryTitle {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #08c15b;
+  border-bottom: 2px solid #2c8c3e;
+  padding-bottom: 0.5rem;
+  display: inline-block; /* Allow border to fit content */
+}
+
+.itemList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Base style */
+.itemEntry {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding: 1rem; /* Add padding for background effect */
+  border-bottom: 1px dashed var(--color-border-dark);
+  border-radius: var(--border-radius-sm);
+  /* Add transition */
+  transition: background-color var(--transition-fast), transform var(--transition-fast), border-left-color var(--transition-fast);
+  border-left: 3px solid transparent; /* Prepare for hover border */
+}
+.itemEntry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 1rem; /* Keep padding */
+}
+
+/* Hover effect */
+.itemEntry:hover {
+    background-color: rgba(11, 49, 7, 0.5); /* Subtle background highlight */
+    transform: translateX(5px); /* Slight shift right */
+    border-left-color: var(--color-accent-cyan); /* Accent border */
+    
+}
+
+
+.itemIcon {
+  font-size: 1.8rem; /* Make icon larger */
+  margin-right: 1rem;
+  min-width: 40px; /* Ensure space for icon */
+  text-align: center;
+}
+
+.itemDetails {
+  flex-grow: 1;
+}
+
+.itemName {
+  font-weight: bold;
+  color: #0fb32b;
+  display: block; /* Ensure it takes full width */
+  margin-bottom: 0.3rem;
+}
+
+.itemDescription {
+  margin: 0 0 0.5rem 0; /* Adjust margin */
+  color: #852d2d;
+  line-height: 1.5;
+}
+
+.recyclableStatus {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px; /* Pill shape */
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  margin-top: 0.2rem;
+}
+
+.recyclableStatus.yes {
+  background-color: #28a745; /* Green */
+}
+
+.recyclableStatus.no {
+  background-color: #dc3545; /* Red */
+}
+
+.recyclableStatus.maybe {
+  background-color: #ffc107; /* Yellow */
+  color: #333; /* Darker text for yellow */
+}
+
+.noResults {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+/* Map Section Placeholder */
+.mapSection {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #fefdfd;
+  text-align: center;
+  color: #888;
+}

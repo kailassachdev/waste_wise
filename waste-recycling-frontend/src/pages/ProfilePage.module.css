@@ -1,0 +1,98 @@
+/* src/pages/ProfilePage.module.css */
+
+.profileContainer {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem 2.5rem;
+  background-color: var(--color-surface-dark-rgba);
+  /* backdrop-filter: blur(5px); */
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-md);
+  border: 1px solid var(--color-border-dark);
+}
+
+.title {
+  text-align: center;
+  color: var(--color-primary-green);
+  margin-bottom: 2rem;
+}
+
+.profileDetails {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--color-border-dark);
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px dashed var(--color-border-dark);
+  font-size: 1.1rem;
+}
+
+.detailItem:last-child {
+  border-bottom: none;
+}
+
+.detailLabel {
+  font-weight: bold;
+  color: var(--color-text-muted);
+  margin-right: 1rem;
+  flex-shrink: 0; /* Prevent label from shrinking */
+}
+
+.detailValue {
+  color: var(--color-text-light);
+  text-align: right;
+  word-break: break-all; /* Break long emails/usernames */
+}
+
+.scoreValue {
+  font-weight: bold;
+  color: var(--color-primary-green);
+  font-size: 1.2rem;
+}
+
+.actions {
+  margin-top: 1rem;
+  text-align: center; /* Center logout button */
+}
+
+.logoutButton {
+  /* Style similarly to other primary/action buttons */
+  padding: 10px 30px;
+  background-color: var(--color-error); /* Use error red for logout */
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.logoutButton:hover {
+  background-color: #c82333; /* Darker red */
+  transform: scale(1.03);
+}
+
+/* Reuse error banner style from AuthForm maybe? Or define here */
+.errorBanner {
+    background-color: rgba(255, 82, 82, 0.2);
+    color: var(--color-error);
+    padding: 10px;
+    border: 1px solid var(--color-error);
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.loading {
+    text-align: center;
+    padding: 3rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+}

@@ -1,0 +1,140 @@
+/* src/pages/LeaderboardPage.module.css */
+
+.leaderboardContainer {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  /* Use semi-transparent surface */
+  background-color: var(--color-surface-dark-rgba);
+  /* backdrop-filter: blur(8px); */
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-md);
+  border: 1px solid var(--color-border-dark);
+  text-align: center;
+}
+
+.title {
+  color: var(--color-primary-green);
+  margin-bottom: 0.5rem;
+  /* text-shadow: 0 0 8px var(--color-glow-green); */
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+.listWrapper {
+  /* Optional wrapper if needed for overflow later */
+  text-align: left; /* Align content inside */
+}
+
+/* Header Row Styling */
+.header {
+  background-color: rgba(0, 0, 0, 0.2); /* Slightly darker header */
+  border-bottom: 2px solid var(--color-border-dark);
+  border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0; /* Round top corners */
+  padding: 0.75rem 1.5rem; /* Consistent padding */
+  margin-bottom: 0.5rem;
+}
+
+.headerItem {
+  font-weight: bold;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Individual Item Styling */
+.leaderboardItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.5rem;
+  border-bottom: 1px solid var(--color-border-dark);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  border-radius: var(--border-radius-sm); /* Optional: round each item slightly */
+  margin-bottom: 0.2rem; /* Slight gap between items */
+}
+
+.leaderboardItem:last-child {
+  border-bottom: none;
+}
+
+.leaderboardItem:hover {
+  background-color: rgba(255, 255, 255, 0.05); /* Subtle hover highlight */
+  transform: scale(1.01); /* Slight scale up */
+}
+
+.rank {
+  flex-basis: 15%; /* Allocate space */
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  min-width: 50px; /* Ensure rank has space */
+}
+
+.name {
+  flex-grow: 1; /* Take remaining space */
+  margin: 0 1rem; /* Space around name */
+  font-size: 1rem;
+  color: var(--color-text-light);
+  overflow: hidden; /* Prevent long names breaking layout */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.score {
+  flex-basis: 25%; /* Allocate space */
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--color-primary-green); /* Use green for score */
+  text-align: right;
+  min-width: 80px; /* Ensure score has space */
+}
+
+/* Special styling for top ranks */
+.firstPlace .rank {
+  color: #ffd700; /* Gold */
+  transform: scale(1.1);
+}
+.secondPlace .rank {
+  color: #c0c0c0; /* Silver */
+  transform: scale(1.05);
+}
+.thirdPlace .rank {
+  color: #cd7f32; /* Bronze */
+}
+
+.firstPlace .name, .secondPlace .name, .thirdPlace .name {
+    font-weight: bold; /* Make top names bold */
+}
+
+/* Styling for highlighting current user (add later) */
+/* .currentUser {
+    background-color: rgba(46, 255, 240, 0.1); // Accent Cyan highlight
+    border-left: 3px solid var(--color-accent-cyan);
+} */
+
+.noData {
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+.loading,
+.error,
+.noData {
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding: 2rem 0;
+  text-align: center; /* Center align these messages */
+}
+
+.error {
+  color: var(--color-error); /* Use error color */
+  font-weight: bold;
+}

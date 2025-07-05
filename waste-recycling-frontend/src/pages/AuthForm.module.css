@@ -1,0 +1,151 @@
+/* Update src/pages/AuthForm.module.css */
+
+.authContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem 1rem;
+    min-height: calc(100vh - 150px);
+    /* Keep page background dark */
+    background-color: var(--color-background-dark);
+}
+
+.authCard {
+    /* Use semi-transparent background */
+    background-color: var(--color-surface-dark-glass); /* Use the glass variable */
+
+    /* --- Frosted Glass Effect --- */
+    backdrop-filter: blur(10px); /* Apply background blur */
+    -webkit-backdrop-filter: blur(10px); /* Safari prefix */
+    /* --- End Frosted Glass --- */
+
+    padding: 2rem 2.5rem;
+    border-radius: var(--border-radius-md);
+    /* Use a subtle border matching the glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Faint white border */
+    box-shadow: var(--box-shadow-md);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.title {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary-green); /* Use primary green */
+    font-size: 1.8rem;
+    /* text-shadow: 0 0 8px var(--color-glow-green); Optional glow */
+}
+
+.inputGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-muted); /* Use muted color */
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.inputGroup input {
+    width: 100%;
+    padding: 10px 12px;
+    /* Slightly transparent inputs */
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-border-dark);
+    color: var(--color-text-light); /* Ensure text is light */
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: var(--color-accent-cyan); /* Use accent cyan on focus */
+    /* Add accent glow on focus */
+    box-shadow: 0 0 0 2px rgba(46, 255, 240, 0.3), 0 0 8px var(--color-glow-cyan);
+}
+
+/* Other styles (.submitButton, .errorBanner, .switchLink) can be updated similarly */
+/* ... */
+
+.submitButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #2c8c3e; /* Green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+}
+
+.submitButton:hover:not(:disabled) {
+    background-color: #247a35; /* Darker green */
+}
+
+.submitButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.errorBanner {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.switchLink {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.switchLink a {
+    color: #2c8c3e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switchLink a:hover {
+    text-decoration: underline;
+}
+
+/* Base style for a primary button */
+.primaryButton { /* Create a reusable class or apply to existing like .submitButton */
+    padding: 12px 25px;
+    background-color: var(--color-primary-green);
+    color: var(--color-background-dark); /* Dark text on bright button */
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast); /* Add transitions */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Hover effect */
+.primaryButton:hover:not(:disabled) {
+    background-color: var(--color-primary-green-dark);
+    transform: scale(1.03); /* Slight zoom */
+    /* Add glow effect */
+    box-shadow: 0 0 15px var(--color-glow-green);
+}
+
+.primaryButton:disabled {
+  background-color: var(--color-border-dark);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  /* Optional: remove hover effects when disabled */
+  transform: none;
+  box-shadow: none;
+}

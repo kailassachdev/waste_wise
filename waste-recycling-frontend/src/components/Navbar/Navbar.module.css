@@ -1,0 +1,65 @@
+/* src/components/Navbar/Navbar.module.css */
+.navbar {
+  background-color:rgb(1, 47, 20); /* Use surface color */
+  padding: 0.8rem 1.5rem;
+  box-shadow: var(--box-shadow-sm);
+  color: var(--color-text-light); /* Default text color */
+  border-bottom: 1px solid var(--color-border-dark); 
+  }
+  
+  .navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .navBrand {
+    color: var(--color-primary-green);
+  text-decoration: none;
+  font-family: var(--font-primary); /* Use heading font */
+  font-size: 1.8rem; /* Increase size slightly */
+  font-weight: 700;
+  }
+  
+  .navList {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navItem {
+    margin-left: 1.5rem; /* Spacing between links */
+  }
+  
+  .navLink {
+    color: var(--color-text-light);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400; /* Regular Roboto */
+  transition: color 0.2s ease-in-out;
+  }
+  
+  .navLink:hover,
+  .navButton:hover { /* Apply hover to both links and button */
+    /* Use accent color for hover */
+    color: var(--color-accent-cyan);
+  }
+  /* Add styles for active links later if needed */
+  /* Add this to src/components/Navbar/Navbar.module.css */
+.navButton {
+  background: none; /* Remove default button background */
+  border: none; /* Remove default button border */
+  color: rgb(205, 12, 12); /* Match link color */
+  text-decoration: none;
+  font-size: 1rem; /* Match link font size */
+  font-family: inherit; /* Use the same font as the rest of the navbar */
+  cursor: pointer;
+  padding: 0; /* Remove default button padding */
+  margin: 0; /* Remove default button margin */
+  transition: color 0.2s ease-in-out; /* Match link transition */
+  vertical-align: baseline; /* Align with text links */
+}
+

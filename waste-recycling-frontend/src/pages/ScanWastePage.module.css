@@ -1,0 +1,351 @@
+/* src/pages/ScanWastePage.module.css */
+.container {
+    padding: 2rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 1rem auto;
+    background-color: #032b0f;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container h2 {
+    color: #20c20b;
+    margin-bottom: 0.5rem;
+  }
+  
+  .container p {
+    margin-bottom: 1.5rem;
+    color: #7bb386;
+  }
+  
+  /* Style for the custom upload button */
+  .uploadButton {
+    background-color: #2c8c3e; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+    display: inline-block; /* Needed for margin auto to work if alone */
+    margin-bottom: 1rem; /* Space below button */
+  }
+  
+  .uploadButton:hover {
+    background-color: #247a35; /* Darker green */
+  }
+  
+  .previewContainer {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack image and button vertically */
+    align-items: center; /* Center items horizontally */
+  }
+  
+  .imagePreview {
+    max-width: 100%; /* Ensure image fits container */
+    max-height: 300px; /* Limit preview height */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem; /* Space between image and change button */
+    object-fit: contain; /* Scale image while preserving aspect ratio */
+  }
+  
+  /* Specific style for the change image button if needed, otherwise inherits .uploadButton */
+  .changeButton {
+    margin-top: 0; /* Remove top margin if not needed */
+    background-color: #f0ad4e; /* Orange for change */
+  }
+  .changeButton:hover {
+     background-color: #ec971f;
+  }
+  
+  
+  .analyzeButton {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem; /* Space above button */
+  }
+  
+  .analyzeButton:hover {
+    background-color: #0056b3; /* Darker blue */
+  }
+  
+  .analyzeButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .loadingIndicator {
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: #555;
+  }
+  
+  .resultsContainer {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #063c10;
+    text-align: left; /* Align text left within the results box */
+  }
+  
+  .resultsContainer h3 {
+    margin-top: 0;
+    color: #0ec02f; /* Green heading */
+    text-align: center; /* Center the results heading */
+    margin-bottom: 1rem;
+  }
+  
+  .resultsContainer p {
+    margin-bottom: 0.8rem;
+    color: #198708;
+  }
+  
+  .resultsContainer strong {
+    color: #c9e5ce;
+  }
+
+  /* Add this to src/pages/ScanWastePage.module.css */
+
+.errorResult {
+  background-color: #f8d7da; /* Light red background for errors */
+  border-color: #f5c6cb;   /* Reddish border */
+}
+
+.errorResult h3 {
+    color: #721c24; /* Dark red heading for errors */
+}
+
+.errorResult p {
+    color: #721c24; /* Dark red text for errors */
+}
+
+/* Base style for a primary button */
+.primaryButton { /* Create a reusable class or apply to existing like .submitButton */
+  padding: 12px 25px;
+  background-color: var(--color-primary-green);
+  color: var(--color-background-dark); /* Dark text on bright button */
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast); /* Add transitions */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Hover effect */
+.primaryButton:hover:not(:disabled) {
+  background-color: var(--color-primary-green-dark);
+  transform: scale(1.03); /* Slight zoom */
+  /* Add glow effect */
+  box-shadow: 0 0 15px var(--color-glow-green);
+}
+
+.primaryButton:disabled {
+background-color: var(--color-border-dark);
+color: var(--color-text-muted);
+cursor: not-allowed;
+/* Optional: remove hover effects when disabled */
+transform: none;
+box-shadow: none;
+}
+/* Add this to src/pages/ScanWastePage.module.css */
+
+/* ... existing styles ... */
+
+/* --- Points Notification --- */
+.pointsNotification {
+  position: fixed; /* Or absolute relative to container */
+  bottom: 20px; /* Position at bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  background-color: var(--color-primary-green); /* Green background */
+  color: var(--color-background-dark); /* Dark text */
+  padding: 10px 25px;
+  border-radius: 20px; /* Pill shape */
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: var(--box-shadow-md);
+  z-index: 1000; /* Ensure it's on top */
+  /* Add animation */
+  animation: fadeInOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+0% {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px); /* Start below and faded */
+}
+15% {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0); /* Fade in and move up */
+}
+85% {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0); /* Stay visible */
+}
+100% {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-10px); /* Fade out and move up slightly */
+}
+}
+
+/* Add these styles to src/pages/ScanWastePage.module.css */
+
+/* ... existing styles ... */
+
+/* --- Call Button --- */
+.callButtonContainer {
+  margin-top: 1.5rem; /* Add space above the button */
+  padding-top: 1rem; /* Optional space within */
+  border-top: 1px dashed var(--color-border-dark); /* Separator line */
+  text-align: center; /* Center the button */
+}
+
+.callButton {
+  background-color: var(--color-warning); /* Use warning yellow/orange */
+  color: var(--color-text-dark); /* Dark text on yellow */
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.callButton:hover:not(:disabled) {
+  background-color: #ffca2c; /* Lighter yellow/orange on hover */
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.4); /* Yellow glow */
+}
+
+.callButton:disabled { /* Add disabled style if you implement that later */
+  background-color: var(--color-border-dark);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Add/Update styles in src/pages/ScanWastePage.module.css */
+
+/* ... existing styles (.container, headings, buttons, preview, results etc.) ... */
+
+/* --- Styles for Camera View --- */
+.cameraView {
+  width: 100%;
+  max-width: 600px; /* Or adjust as needed */
+  margin: 1rem auto 2rem auto; /* Center and add spacing */
+  position: relative; /* For potential overlay controls */
+  border: 2px solid var(--color-border-dark);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden; /* Hide parts of video that might overflow */
+  background-color: #000; /* Black background while loading */
+}
+
+.videoFeed {
+  display: block; /* Remove extra space below video */
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  transform: scaleX(-1); /* Mirror image - common for user-facing cameras */
+  /* Remove if using back camera primarily and mirroring is unwanted */
+}
+
+.cameraControls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Space between buttons */
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+}
+
+/* Style the capture button differently */
+.captureButton {
+  /* Example: Make it look like a primary action */
+  padding: 10px 25px;
+  background-color: var(--color-primary-green);
+  color: var(--color-background-dark);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.captureButton:hover {
+   background-color: var(--color-primary-green-dark);
+   transform: scale(1.05);
+   box-shadow: 0 0 10px var(--color-glow-green);
+}
+
+/* Style the cancel button */
+.cancelButton {
+   /* Example: Make it look less prominent */
+  padding: 10px 20px;
+  background-color: var(--color-error); /* Use error red */
+  color: var(--color-text-light);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+.cancelButton:hover {
+  background-color: #d32f2f; /* Darker red */
+  transform: scale(1.03);
+}
+
+/* --- Styles for Choice Buttons (Upload/Camera) --- */
+.choiceButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Space between buttons */
+  margin-bottom: 1.5rem;
+}
+
+/* Style the new Camera button */
+.cameraButton {
+  /* Example: Use accent color */
+  padding: 10px 20px; /* Match upload button maybe? */
+  background-color: var(--color-accent-cyan);
+  color: var(--color-background-dark);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem; /* Match upload/change button */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.cameraButton:hover {
+  background-color: var(--color-accent-cyan-dark);
+  transform: scale(1.03);
+  box-shadow: 0 0 10px var(--color-glow-cyan);
+}
+
+/* Error banner styling if not already present */
+.errorBanner {
+  background-color: rgba(255, 82, 82, 0.2);
+  color: var(--color-error);
+  padding: 10px;
+  border: 1px solid var(--color-error);
+  border-radius: var(--border-radius-sm);
+  margin: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+/* ... (rest of your CSS) ... */

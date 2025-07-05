@@ -1,0 +1,17 @@
+/* src/App.css - Example minimal content */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f4; /* Optional: a light background */
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Remove other default styles like .logo, .card, .read-the-docs etc. */
